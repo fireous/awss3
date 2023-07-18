@@ -34,8 +34,7 @@ public class PictureUploadService {
                 .build();
 
         s3Client.putObject(putObjectRequest, RequestBody.fromBytes(imageBytes));
-
-        String imageUrl = "https://" + bucketName + ".s3." + s3RegionName + ".amazonaws.com/" + fileName;
+        String imageUrl = "https://s3."+ s3RegionName + ".amazonaws.com/" + bucketName + "/"  + fileName;
         return imageUrl;
     }
     
